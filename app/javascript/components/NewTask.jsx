@@ -7,7 +7,7 @@ class NewTask extends React.Component {
         this.state = {
             name: "",
             description: "",
-            deadline: ""
+            priority: ""
         };
 
         this.onChange = this.onChange.bind(this);
@@ -28,7 +28,7 @@ class NewTask extends React.Component {
     onSubmit(event) {
         event.preventDefault();
         const url = "/api/v1/tasks/create";
-        const { name, description, deadline } = this.state;
+        const { name, description, priority } = this.state;
 
         if (name.length == 0)
             return;
@@ -36,7 +36,7 @@ class NewTask extends React.Component {
         const body = {
             name,
             description,
-            deadline
+            priority
         };
 
         const token = document.querySelector('meta[name="csrf-token"]').content;
@@ -89,12 +89,11 @@ class NewTask extends React.Component {
                                     onChange={this.onChange}
                                 />
                             </div>
-                            <label htmlFor="deadline">Deadline</label>
+                            <label htmlFor="priority">Priority</label>
                             <textarea
                                 className="form-control"
-                                id="deadline"
-                                name="deadline"
-                                rows="5"
+                                id="taskPriority"
+                                name="priority"
                                 required
                                 onChange={this.onChange}
                             />

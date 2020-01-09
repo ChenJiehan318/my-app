@@ -78,10 +78,13 @@ class Task extends React.Component {
                 <div className="container py-5">
                     <div className="row">
                         <div className="col-sm-12 col-lg-3">
-                                <h5 className="mb-2">Description</h5>
+                                <h5 className="mb-2">Description: {task.description}</h5>
                         </div>
                         <div className="col-sm-12 col-lg-7">
-                            <h5 className="mb-2">Name</h5>
+                            <h5 className="mb-2">Name: {task.name}</h5>
+                        </div>
+                        <div className="col-sm-12 col-lg-7">
+                            <h5 className="mb-2">Priority: {task.priority}</h5>
                         </div>
                         <div className="col-sm-12 col-lg-2">
                             <button type="button" className="btn btn-danger" onClick={this.deleteTask}>

@@ -29,7 +29,7 @@ class Api::V1::TasksController < ApplicationController
   private
 
   def task_params
-    params.permit(:name, :description, :deadline, :status)
+    params.permit(:name, :description, :priority)
   end
 
   def task
